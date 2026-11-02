@@ -34,9 +34,17 @@ padding-top:12px;border-top:1px solid #ffffff1a}
 .hk b{font-size:14px;font-variant-numeric:tabular-nums}
 .hk .up{color:#ff8a8a}.hk .down{color:#5fd6a3}
 .hint{font-size:11.5px;opacity:.5;margin-top:12px}
-.month{margin-bottom:16px}
+.month{margin-bottom:12px}
 .mt{font-size:12px;color:#6b7280;margin:0 4px 7px;display:flex;justify-content:space-between}
 .mt span{color:#a8adb6}
+details.month>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;
+align-items:center;padding:11px 14px;background:#fff;border-radius:14px;font-size:12.5px;
+color:#6b7280;box-shadow:0 1px 2px #0b122008;margin-bottom:8px}
+details.month>summary::-webkit-details-marker{display:none}
+details.month>summary b{color:#39404d;font-weight:600;font-size:13px}
+details.month>summary .arw{color:#a8adb6;transition:transform .2s}
+details.month[open]>summary .arw{transform:rotate(90deg)}
+details.month .list{margin-bottom:8px}
 .list{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 1px 2px #0b122008}
 .row{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;
 border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
@@ -74,7 +82,7 @@ padding-bottom:env(safe-area-inset-bottom)}
   </div>
   <div class="hint">点开看完整复盘 →</div>
 </a>
-<div class="month"><div class="mt">2026-11<span>1 篇</span></div><div class="list"><a class="row" href="2026-11-02/2026-11-02-复盘.html?v=1793607614">
+<details class="month" open><summary><span><b>2026-11</b>　1 篇</span><span class="arw">›</span></summary><div class="list"><a class="row" href="2026-11-02/2026-11-02-复盘.html?v=1793607614">
   <div class="rl"><div class="rd">11-02</div><div class="rw">周一</div></div>
   <div class="rm">
     <span class="pct up">1.08%</span>
@@ -82,7 +90,7 @@ padding-bottom:env(safe-area-inset-bottom)}
     <span class="k">情绪 <b>87</b></span>
     <span class="pill p-hot">高潮</span>
   </div>
-</a></div></div><div class="month"><div class="mt">2026-10<span>3 篇</span></div><div class="list"><a class="row" href="2026-10-30/2026-10-30-复盘.html?v=1793589740">
+</a></div></details><details class="month"><summary><span><b>2026-10</b>　3 篇</span><span class="arw">›</span></summary><div class="list"><a class="row" href="2026-10-30/2026-10-30-复盘.html?v=1793589740">
   <div class="rl"><div class="rd">10-30</div><div class="rw">周五</div></div>
   <div class="rm">
     <span class="pct down">-1.44%</span>
@@ -106,9 +114,9 @@ padding-bottom:env(safe-area-inset-bottom)}
     <span class="k">情绪 <b>67</b></span>
     <span class="pill p-hot">发酵</span>
   </div>
-</a></div></div>
+</a></div></details>
 <div class="foot">数据与判断仅供个人研究，不构成投资建议<br>
-生成于 2026-11-02 16:20</div>
+生成于 2026-11-02 16:38</div>
 <div class="tabbar"><a href="index.html" class="on">每日复盘</a><a href="pre/index.html">盘前简报</a><a href="earn/index.html">业绩追踪</a></div>
 </div>
 <script>
