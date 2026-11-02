@@ -35,6 +35,16 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}
 th,td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left}
 th{font-size:10.5px;color:#8a8f98;font-weight:600}
 .num{text-align:right;font-variant-numeric:tabular-nums}
+details.tier{margin-bottom:10px}
+details.tier>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;
+align-items:center;padding:13px 16px;background:#fff;border-radius:14px;font-size:13.5px;
+font-weight:600;color:#39404d;box-shadow:0 1px 2px #0b122008}
+details.tier>summary::-webkit-details-marker{display:none}
+details.tier>summary .cnt{font-weight:400;color:#8a8f98;font-size:12px}
+details.tier>summary .arw{display:inline-block;transition:transform .2s;color:#a8adb6;margin-left:8px}
+details.tier[open]>summary{border-radius:14px 14px 0 0}
+details.tier[open]>summary .arw{transform:rotate(90deg)}
+details.tier .card{border-radius:0 0 14px 14px;margin-bottom:0}
 </style></head><body><div class="wrap">
 <div class="head"><h1>*ST尼雅<span class="cd" style="font-size:12px">600084</span></h1>
 <div class="sub"><a href="index.html" style="color:#8a8f98;text-decoration:none">← 返回</a></div></div>
