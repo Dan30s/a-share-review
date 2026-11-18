@@ -1,0 +1,93 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>猎奇智能 业绩</title><style>.kv{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center;margin-top:6px}
+.kv>div{background:#fafbfc;border-radius:10px;padding:10px 4px}
+.kv .n{font-size:10.5px;color:#8a8f98}
+.kv .v{font-size:17px;font-weight:700;font-variant-numeric:tabular-nums}
+.up{color:#d93a3a}.down{color:#17945f}.mut{color:#8a8f98}
+.note{font-size:12px;color:#6b7280;line-height:1.75}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.card{padding:14px 15px}
+
+:root{--up:#d93a3a;--down:#17945f;--mut:#8a8f98;--ink:#14171c;--line:#eef0f3;--gold:#b8860b}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:#f4f5f7;color:var(--ink);font:15px/1.6 -apple-system,"PingFang SC",sans-serif}
+.wrap{max-width:560px;margin:0 auto;padding:20px 16px 86px}
+.head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:14px}
+h1{font-size:19px;margin:0}
+.sub{font-size:12px;color:var(--mut)}
+.stat{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.stat div{background:#fff;border-radius:14px;padding:12px 10px;text-align:center;box-shadow:0 1px 2px #0b122008}
+.stat .n{font-size:10.5px;color:var(--mut)}
+.stat .v{font-size:20px;font-weight:800;font-variant-numeric:tabular-nums}
+.card{background:#fff;border-radius:16px;overflow:hidden;margin-bottom:14px;box-shadow:0 1px 2px #0b122008}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 15px;
+border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
+.row:last-child{border-bottom:none}
+.rl{min-width:0}
+.nm{font-size:14px;font-weight:600}
+.cd{font-size:10.5px;color:#a8adb6;margin-left:5px;font-weight:400}
+.m{font-size:11px;color:#6b7280;margin-top:2px}
+.rr{text-align:right;flex:0 0 auto}
+.big{font-size:17px;font-weight:800;font-variant-numeric:tabular-nums;color:var(--up)}
+.small{font-size:10.5px;color:var(--mut)}
+.tag{display:inline-block;padding:0 6px;border-radius:4px;font-size:10px;background:#f1f3f6;color:#64748b;margin-left:5px}
+.tag-hot{background:#fdeaea;color:#c0392b}
+.gem{color:#4C6E9E}
+.tabbar{position:fixed;left:0;right:0;bottom:0;display:flex;background:#fffffff2;
+backdrop-filter:blur(10px);border-top:1px solid var(--line);z-index:9;padding-bottom:env(safe-area-inset-bottom)}
+.tabbar a{flex:1;text-align:center;padding:10px 0 9px;text-decoration:none;color:#8a8f98;font-size:12.5px}
+.tabbar a.on{color:#1b1f27;font-weight:700}
+.tabbar a.on::after{content:"";display:block;width:18px;height:2.5px;border-radius:2px;background:var(--gold);margin:5px auto 0}
+.sec{font-size:12px;color:#6b7280;margin:4px 4px 7px;display:flex;justify-content:space-between}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left}
+th{font-size:10.5px;color:#8a8f98;font-weight:600}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+details.tier{margin-bottom:10px}
+details.tier>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;
+align-items:center;padding:13px 16px;background:#fff;border-radius:14px;font-size:13.5px;
+font-weight:600;color:#39404d;box-shadow:0 1px 2px #0b122008}
+details.tier>summary::-webkit-details-marker{display:none}
+details.tier>summary .cnt{font-weight:400;color:#8a8f98;font-size:12px}
+details.tier>summary .arw{display:inline-block;transition:transform .2s;color:#a8adb6;margin-left:8px}
+details.tier[open]>summary{border-radius:14px 14px 0 0}
+details.tier[open]>summary .arw{transform:rotate(90deg)}
+details.tier .card{border-radius:0 0 14px 14px;margin-bottom:0}
+.px{display:flex;align-items:flex-end;gap:10px}
+.px .v{font-size:32px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.px .d{font-size:16px;font-weight:700}
+.mt{font-size:11.5px;color:#6b7280;margin-top:8px;line-height:1.7}
+.mt b{color:#39404d}
+.tag2{display:inline-block;margin-left:8px;padding:1px 8px;border-radius:5px;background:#f1f3f6;
+color:#64748b;font-size:10.5px;font-weight:400;vertical-align:2px}
+.spark{margin:10px -2px 0 -2px}
+.mtsub{font-size:10.5px;color:#8a8f98;margin-top:6px}
+.search{width:100%;padding:12px 14px;border:1px solid #e6e8ec;border-radius:12px;font-size:15px;
+outline:none;background:#fff;margin-bottom:10px;color:#14171c}
+.search:focus{border-color:#c9a227}
+.hint{font-size:11px;color:#8a8f98;margin:0 4px 10px}
+.empty2{padding:24px;text-align:center;color:#a8adb6;font-size:13px}
+
+.nav{position:sticky;top:0;z-index:30;display:flex;gap:15px;align-items:center;
+background:#fffffff5;backdrop-filter:blur(10px);border-bottom:1px solid #eef0f3;
+padding:9px 16px;font-size:12.5px;max-width:560px;margin:0 auto}
+.nav a{color:#8a8f98;text-decoration:none;white-space:nowrap}
+.nav a.on{color:#1b1f27;font-weight:700}
+.nav a.home{color:#b8860b;font-weight:600}
+</style><link rel="manifest" href="/a-share-review/manifest.webmanifest"><meta name="theme-color" content="#1b1f27"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="A股复盘"><link rel="apple-touch-icon" href="/a-share-review/icon-192.png"></head><body><div class="nav"><a class="home" href="../index.html">⌂ 首页</a><a class="on" href="../earn/index.html">业绩追踪</a></div><div class="wrap">
+<div class="head"><h1 class="gem">猎奇智能<span class="cd" style="font-size:12px">301661</span></h1>
+<div class="sub"><a href="index.html" style="color:#8a8f98;text-decoration:none">← 返回</a></div></div>
+
+<div class="card"><div class="sec">最新业绩（2026-12-31 报告期）</div>
+<div class="kv">
+  <div><div class="n">净利同比</div><div class="v up">+225%</div></div>
+  <div><div class="n">去年同期</div><div class="v">1.82亿</div></div>
+  <div><div class="n">预告类型</div><div class="v" style="font-size:14px">预增</div></div>
+</div>
+<div class="mt">公告日 2026-11-18 · 入池 2026-11-18 · 已披露 1 期</div></div>
+
+<div class="card"><div class="sec">业绩时间轴</div>
+<table><tr><th>报告期</th><th class="num">净利同比</th><th class="num">去年同期</th><th>类型</th></tr><tr><td>2026-12-31</td><td class="num" style="color:#d93a3a">+225%</td><td class="num">1.82亿</td><td>预增</td></tr></table></div>
+<div class="card"><div class="sec">公司说法</div><div class="note">导致公司预计营业收入和净利润增长原因系在光模块需求持续放量的背景下,光模块厂商纷纷加速产能扩张,对设备的需求不断提升所致。</div></div>
+</div></body></html>
