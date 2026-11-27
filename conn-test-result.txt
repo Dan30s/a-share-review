@@ -1,0 +1,12 @@
+run_at_utc: 2026-11-27T09:16:01Z
+tencent_quote          http=200 size=464 head=v_sh000001="1~ÉÏÖ¤Ö¸Êý~000001~3606.49~3476.88~3482.38~63462696
+sina_quote             http=200 size=173 head=var hq_str_sh000001="ÉÏÖ¤Ö¸Êý,3482.3752,3476.8816,3606.4868,36
+sina_all_a             http=200 size=1876 head=[{"symbol":"bj920298","code":"920298","name":"\u817e\u4fe1\u
+em_ztpool              http=200 size=1438 head={"rc":0,"rt":110,"svr":183632152,"lt":2,"full":0,"data":{"tc
+em_longhu              http=200 size=5373 head={"version":"cd1add9479d74f1a2a6cde62010e676a","result":{"pag
+em_announce            http=200 size=3532 head={"data":{"list":[{"art_code":"AN202611181831832889","codes":
+ths_hot                http=200 size=83891 head={"status_code":0,"data":{"stock_list":[{"market":33,"code":"
+ths_blocktop           http=200ERR size=2382806 head={"status_code":0,"data":[{"code":"885756","name":"èŠ¯ç‰‡æ¦‚å¿µ","cha
+sina_7x24              http=200 size=12463 head={"result":{"status":{"code":0,"msg":"OK"},"timestamp":"Fri N
+tencent_kline          http=200 size=2067 head={"code":0,"msg":"","data":{"sh000001":{"day":[["2026-11-23",
+sina_industry          http=200 size=6715 head=var S_Finance_bankuai_sinaindustry = {"new_blhy":"new_blhy,²
