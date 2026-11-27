@@ -1,0 +1,50 @@
+name: conn-test
+
+on:
+  push:
+    paths:
+      - '.github/workflows/conn-test.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: curl 行情接口
+        run: |
+          exec 3>&1
+          {
+            echo "run_at_utc: $(date -u +%FT%TZ)"
+            test_one() {
+              name="$1"; url="$2"; ref="$3"
+              code=$(curl -s -o /tmp/o -w "%{http_code}" -m 15 -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124.0" -H "Referer: $ref" "$url" 2>/dev/null || echo "ERR")
+              size=$(wc -c < /tmp/o 2>/dev/null | tr -d ' ')
+              head=$(head -c 80 /tmp/o 2>/dev/null | tr -d '\n' | cut -c1-60)
+              printf "%-22s http=%s size=%s head=%s\n" "$name" "$code" "$size" "$head"
+            }
+            test_one "tencent_quote"    "https://qt.gtimg.cn/q=sh000001" "https://gu.qq.com/"
+            test_one "sina_quote"       "https://hq.sinajs.cn/list=sh000001" "https://finance.sina.com.cn/"
+            test_one "sina_all_a"       "https://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/Market_Center.getHQNodeData?page=1&num=5&sort=changepercent&asc=0&node=hs_a" "https://finance.sina.com.cn/"
+            test_one "em_ztpool"        "https://push2ex.eastmoney.com/getTopicZTPool?ut=7eea3edcaed734bea9cbfc24409ed989&dpt=wz.ztzt&Pageindex=0&pagesize=5&sort=fbt:asc&date=20261127" "https://quote.eastmoney.com/"
+            test_one "em_longhu"        "https://datacenter-web.eastmoney.com/api/data/v1/get?reportName=RPT_DAILYBILLBOARD_DETAILSNEW&columns=ALL&pageNumber=1&pageSize=5" "https://data.eastmoney.com/"
+            test_one "em_announce"      "https://np-anotice-stock.eastmoney.com/api/security/ann?sr=-1&page_size=5&page_index=1&ann_type=A&client_source=web&stock_list=600000" "https://data.eastmoney.com/"
+            test_one "ths_hot"          "https://dq.10jqka.com.cn/fuyao/hot_list_data/out/hot_list/v1/stock?stock_type=a&type=hour&list_type=normal" "https://www.10jqka.com.cn/"
+            test_one "ths_blocktop"     "https://data.10jqka.com.cn/dataapi/limit_up/block_top?filter=HS,GEM2STAR&date=20261127" "https://data.10jqka.com.cn/"
+            test_one "sina_7x24"        "https://zhibo.sina.com.cn/api/zhibo/feed?page=1&page_size=5&zhibo_id=152&tag_id=0&dire=f&dpc=1" "https://finance.sina.com.cn/7x24/"
+            test_one "tencent_kline"    "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh000001,day,,,5,qfq" "https://gu.qq.com/"
+            test_one "sina_industry"    "https://vip.stock.finance.sina.com.cn/q/view/newSinaHy.php" "https://finance.sina.com.cn/"
+          } > conn-test-result.txt 2>&1
+          cat conn-test-result.txt
+
+      - name: 提交结果
+        run: |
+          git config user.name "conn-bot"
+          git config user.email "conn-bot@users.noreply.github.com"
+          git add conn-test-result.txt
+          git commit -m "conn test $(date -u +%FT%TZ)" || echo "nothing to commit"
+          git push || echo "push failed"
